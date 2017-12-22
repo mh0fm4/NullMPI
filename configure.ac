@@ -18,6 +18,7 @@ AC_PROG_CPP
 AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
+AM_PROG_AR
 LT_INIT
 
 # Checks for header files.
@@ -37,8 +38,8 @@ AC_C_CONST
 AC_C_VAR_FUNC
 AC_MSG_CHECKING([if the compiler understands __attribute__])
 AC_CACHE_VAL([rw_cv_c_attribute],
-	     [AC_COMPILE_IFELSE([int f(void) __attribute__((__pure__,__deprecated__));
-	      int f(void) { return 1; }],
+	     [AC_COMPILE_IFELSE([AC_LANG_SOURCE([int f(void) __attribute__((__pure__,__deprecated__));
+	      int f(void) { return 1; }])],
 	      [rw_cv_c_attribute=yes],[rw_cv_c_attribute=no])])
 case $rw_cv_c_attribute in
 	yes) AC_MSG_RESULT([yes])
