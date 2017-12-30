@@ -35,7 +35,7 @@ AC_CHECK_SIZEOF(long long)
 
 # Checks for compiler characteristics.
 AC_C_CONST
-AC_C_VAR_FUNC
+AX_C_VAR_FUNC
 AC_MSG_CHECKING([if the compiler understands __attribute__])
 AC_CACHE_VAL([rw_cv_c_attribute],
 	     [AC_COMPILE_IFELSE([AC_LANG_SOURCE([int f(void) __attribute__((__pure__,__deprecated__));
