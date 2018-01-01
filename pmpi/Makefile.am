@@ -3,6 +3,7 @@
 lib_LTLIBRARIES = libnullpmpi.la
 libnullpmpi_la_SOURCES = \
 	abort.c \
+	address.c \
 	allgather.c \
 	allgatherv.c \
 	allreduce.c \
@@ -40,6 +41,7 @@ libnullpmpi_la_SOURCES = \
 	finalize.c \
 	gather.c \
 	gatherv.c \
+	get_address.c \
 	get_count.c \
 	get_elements.c \
 	get_processor_name.c \

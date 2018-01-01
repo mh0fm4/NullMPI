@@ -60,6 +60,7 @@ PRIVATEAPISOURCES = \
 	mpi_finalize.c \
 	mpi_gather.c \
 	mpi_gatherv.c \
+	mpi_get_address.c \
 	mpi_get_count.c \
 	mpi_get_elements.c \
 	mpi_get_processor_name.c \

@@ -7,7 +7,7 @@
 int MPI_Address(void *p, MPI_Aint *mp)
 {
   NULLMPI_STATS;
-  /*@i@*/ *mp = p;
+  /*@i@*/ *mp = (MPI_Aint) p;
   return MPI_SUCCESS;
 }
 #endif /* _NULLMPI_USE_DEPRECATED_MPI1_FEATURES */

@@ -258,7 +258,7 @@ extern int MPI_Finalized(/*@out@*/ int *);
 
 extern int MPI_Free_mem(/*@out@*/ /*@only@*/ void *base);
 
-extern int MPI_Get_address(void *location, /*@out@*/ MPI_Aint *address);
+extern int MPI_Get_address(const void *location, /*@out@*/ MPI_Aint *address);
 
 extern MPI_Fint MPI_Group_c2f(MPI_Group group);
 extern MPI_Group MPI_Group_f2c(MPI_Fint group);
