@@ -538,7 +538,7 @@ extern int MPI_Cart_sub(MPI_Comm comm, int *remain_dims,
 extern int MPI_Cart_map(MPI_Comm comm_old, int ndims, int dims[], int periods[],
     /*@out@*/ int *newrank)
     /*@modifies newrank@*/
-    /*@requires maxRead(dims) >= (ndims-1) 
+    /*@requires maxRead(dims) >= (ndims-1)
              /\ maxRead(periods) >= (ndims-1)@*/ ;
 
 extern int MPI_Graph_map(MPI_Comm comm_old, int nnodes,

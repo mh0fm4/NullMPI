@@ -52,6 +52,8 @@ typedef int (MPI_Delete_function)(MPI_Comm, int, void *, void *);
 /* datatypes */
 /*@constant MPI_Datatype MPI_CHAR;@*/
 /*@constant MPI_Datatype MPI_UNSIGNED_CHAR;@*/
+/*@constant MPI_Datatype MPI_SIGNED_CHAR;@*/
+/*@constant MPI_Datatype MPI_WCHAR;@*/
 /*@constant MPI_Datatype MPI_BYTE;@*/
 /*@constant MPI_Datatype MPI_SHORT;@*/
 /*@constant MPI_Datatype MPI_UNSIGNED_SHORT;@*/
@@ -63,6 +65,24 @@ typedef int (MPI_Delete_function)(MPI_Comm, int, void *, void *);
 /*@constant MPI_Datatype MPI_DOUBLE;@*/
 /*@constant MPI_Datatype MPI_LONG_DOUBLE;@*/
 /*@constant MPI_Datatype MPI_LONG_LONG_INT;@*/
+/*@constant MPI_Datatype MPI_LONG_LONG;@*/
+/*@constant MPI_Datatype MPI_UNSIGNED_LONG_LONG;@*/
+/*@constant MPI_Datatype MPI_INT8_T;@*/
+/*@constant MPI_Datatype MPI_INT16_T;@*/
+/*@constant MPI_Datatype MPI_INT32_T;@*/
+/*@constant MPI_Datatype MPI_INT64_T;@*/
+/*@constant MPI_Datatype MPI_UINT8_T;@*/
+/*@constant MPI_Datatype MPI_UINT16_T;@*/
+/*@constant MPI_Datatype MPI_UINT32_T;@*/
+/*@constant MPI_Datatype MPI_UINT64_T;@*/
+/*@constant MPI_Datatype MPI_AINT;@*/
+/*@constant MPI_Datatype MPI_COUNT;@*/
+/*@constant MPI_Datatype MPI_OFFSET;@*/
+/*@constant MPI_Datatype MPI_C_BOOL;@*/
+/*@constant MPI_Datatype MPI_C_COMPLEX;@*/
+/*@constant MPI_Datatype MPI_C_FLOAT_COMPLEX;@*/
+/*@constant MPI_Datatype MPI_C_DOUBLE_COMPLEX;@*/
+/*@constant MPI_Datatype MPI_C_LONG_DOUBLE_COMPLEX;@*/
 
 /*@constant MPI_Datatype MPI_PACKED;@*/
 #if _NULLMPI_USE_DEPRECATED_MPI1_FEATURES
@@ -91,6 +111,12 @@ typedef int (MPI_Delete_function)(MPI_Comm, int, void *, void *);
 /*@constant MPI_Datatype MPI_2DOUBLE_PRECISION;@*/
 /*@constant MPI_Datatype MPI_CHARACTER;@*/
 
+/* C++ types */
+/*@constant MPI_Datatype MPI_CXX_BOOL;@*/
+/*@constant MPI_Datatype MPI_CXX_FLOAT_COMPLEX;@*/
+/*@constant MPI_Datatype MPI_CXX_DOUBLE_COMPLEX;@*/
+/*@constant MPI_Datatype MPI_CXX_LONG_DOUBLE_COMPLEX;@*/
+
 /*@constant int NULLMPI_MAX_DATATYPE;@*/
 
 /* communicators */
@@ -113,6 +139,8 @@ typedef int (MPI_Delete_function)(MPI_Comm, int, void *, void *);
 /*@constant MPI_Op MPI_BXOR;@*/
 /*@constant MPI_Op MPI_MINLOC;@*/
 /*@constant MPI_Op MPI_MAXLOC;@*/
+/*@constant MPI_Op MPI_REPLACE;@*/
+/*@constant MPI_Op MPI_NO_OP;@*/
 
 /* permanent key values */
 /* The actual types of these can be different depending on the
@@ -178,6 +206,23 @@ typedef int (MPI_Delete_function)(MPI_Comm, int, void *, void *);
 /*@constant int MPI_SUCCESS;@*/
 /*@constant int MPI_ERR_IN_STATUS;@*/
 /*@constant int MPI_ERR_PENDING;@*/
+/*@constant int MPI_ERR_BUFFER;@*/
+/*@constant int MPI_ERR_COUNT;@*/
+/*@constant int MPI_ERR_TYPE;@*/
+/*@constant int MPI_ERR_TAG;@*/
+/*@constant int MPI_ERR_COMM;@*/
+/*@constant int MPI_ERR_RANK;@*/
+/*@constant int MPI_ERR_REQUEST;@*/
+/*@constant int MPI_ERR_ROOT;@*/
+/*@constant int MPI_ERR_GROUP;@*/
+/*@constant int MPI_ERR_OP;@*/
+/*@constant int MPI_ERR_TOPOLOGY;@*/
+/*@constant int MPI_ERR_DIMS;@*/
+/*@constant int MPI_ERR_ARG;@*/
+/*@constant int MPI_ERR_UNKNOWN;@*/
+/*@constant int MPI_ERR_TRUNCATE;@*/
+/*@constant int MPI_ERR_OTHER;@*/
+/*@constant int MPI_ERR_INTERN;@*/
 /* all other ones are implementation dependent in MPI-1.2,
  * but see below for more with MPI-2
  */
@@ -205,6 +250,8 @@ typedef enum
   MPI_DATATYPE_NULL,
   MPI_CHAR,
   MPI_UNSIGNED_CHAR,
+  MPI_SIGNED_CHAR,
+  MPI_WCHAR,
   MPI_BYTE,
   MPI_SHORT,
   MPI_UNSIGNED_SHORT,
@@ -216,6 +263,24 @@ typedef enum
   MPI_DOUBLE,
   MPI_LONG_DOUBLE,
   MPI_LONG_LONG_INT,
+  MPI_LONG_LONG,
+  MPI_UNSIGNED_LONG_LONG,
+  MPI_INT8_T,
+  MPI_INT16_T,
+  MPI_INT32_T,
+  MPI_INT64_T,
+  MPI_UINT8_T,
+  MPI_UINT16_T,
+  MPI_UINT32_T,
+  MPI_UINT64_T,
+  MPI_AINT,
+  MPI_COUNT,
+  MPI_OFFSET,
+  MPI_C_BOOL,
+  MPI_C_COMPLEX,
+  MPI_C_FLOAT_COMPLEX,
+  MPI_C_DOUBLE_COMPLEX,
+  MPI_C_LONG_DOUBLE_COMPLEX,
 
   MPI_PACKED,
 
@@ -241,6 +306,12 @@ typedef enum
   MPI_2REAL,
   MPI_2DOUBLE_PRECISION,
   MPI_CHARACTER,
+
+  MPI_CXX_BOOL,
+  MPI_CXX_FLOAT_COMPLEX,
+  MPI_CXX_DOUBLE_COMPLEX,
+  MPI_CXX_LONG_DOUBLE_COMPLEX,
+
   NULLMPI_MAX_DATATYPE
 } MPI_Datatype;
 
@@ -272,7 +343,9 @@ typedef enum
   MPI_LXOR,
   MPI_BXOR,
   MPI_MINLOC,
-  MPI_MAXLOC
+  MPI_MAXLOC,
+  MPI_REPLACE,
+  MPI_NO_OP
 } MPI_Op;
 
 typedef long MPI_Aint;
@@ -341,9 +414,26 @@ typedef int (MPI_Delete_function)(MPI_Comm, int, void *, void *);
 
 /* MPI's error classes */
 /* Error types.  If we were mean we would define MPI_SUCCESS to != 0 here. */
-#define MPI_SUCCESS		0
-#define MPI_ERR_IN_STATUS	1
-#define MPI_ERR_PENDING		2
+#define MPI_SUCCESS        0
+#define MPI_ERR_IN_STATUS  1
+#define MPI_ERR_PENDING    2
+#define MPI_ERR_BUFFER     3
+#define MPI_ERR_COUNT      4
+#define MPI_ERR_TYPE       5
+#define MPI_ERR_TAG        6
+#define MPI_ERR_COMM       7
+#define MPI_ERR_RANK       8
+#define MPI_ERR_REQUEST    9
+#define MPI_ERR_ROOT       10
+#define MPI_ERR_GROUP      11
+#define MPI_ERR_OP         12
+#define MPI_ERR_TOPOLOGY   13
+#define MPI_ERR_DIMS       14
+#define MPI_ERR_ARG        15
+#define MPI_ERR_UNKNOWN    16
+#define MPI_ERR_TRUNCATE   17
+#define MPI_ERR_OTHER      18
+#define MPI_ERR_INTERN     19
 
 /* Miscellany */
 #define MPI_MAX_PROCESSOR_NAME	256
