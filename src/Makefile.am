@@ -55,6 +55,7 @@ PRIVATEAPISOURCES = \
 	mpi_comm_size.c \
 	mpi_comm_split.c \
 	mpi_comm_test_inter.c \
+	mpi_dims_create.c \
 	mpi_error_class.c \
 	mpi_error_string.c \
 	mpi_finalize.c \
