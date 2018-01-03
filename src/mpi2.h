@@ -192,10 +192,15 @@ typedef void (MPI_Win_errhandler_fn)(MPI_Win *, int *, ...);
 /*@constant int MPI_COMBINER_VECTOR;@*/
 
 /* thread constants */
-/*@constant int MPI_THREAD_FUNNELED;@*/
-/*@constant int MPI_THREAD_MULTIPLE;@*/
-/*@constant int MPI_THREAD_SERIALIZED;@*/
 /*@constant int MPI_THREAD_SINGLE;@*/
+/*@constant int MPI_THREAD_FUNNELED;@*/
+/*@constant int MPI_THREAD_SERIALIZED;@*/
+/*@constant int MPI_THREAD_MULTIPLE;@*/
+
+#define MPI_THREAD_SINGLE      0
+#define MPI_THREAD_FUNNELED    1
+#define MPI_THREAD_SERIALIZED  2
+#define MPI_THREAD_MULTIPLE    3
 
 /* file operations constants */
 /*@constant MPI_Offset MPI_DISPLACEMENT_CURRENT;@*/
@@ -208,6 +213,17 @@ typedef void (MPI_Win_errhandler_fn)(MPI_Win *, int *, ...);
 /*@constant int MPI_SEEK_CUR;@*/
 /*@constant int MPI_SEEK_END;@*/
 /*@constant int MPI_SEEK_SET;@*/
+
+#define MPI_DISPLACEMENT_CURRENT  0
+#define MPI_DISTRIBUTE_BLOCK      1
+#define MPI_DISTRIBUTE_CYCLIC     2
+#define MPI_DISTRIBUTE_DFLT_DARG  3
+#define MPI_DISTRIBUTE_NONE       4
+#define MPI_ORDER_C               5
+#define MPI_ORDER_FORTRAN         6
+#define MPI_SEEK_CUR              7
+#define MPI_SEEK_END              8
+#define MPI_SEEK_SET              9
 
 /* F90 datatype matching constants */
 /*@constant int MPI_TYPECLASS_COMPLEX;@*/
