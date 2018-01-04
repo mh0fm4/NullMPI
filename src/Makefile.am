@@ -46,6 +46,7 @@ PRIVATEAPISOURCES = \
 	mpi_comm_compare.c \
 	mpi_comm_create.c \
 	mpi_comm_dup.c \
+	mpi_comm_f2c.c \
 	mpi_comm_free.c \
 	mpi_comm_group.c \
 	mpi_comm_rank.c \
@@ -58,6 +59,7 @@ PRIVATEAPISOURCES = \
 	mpi_dims_create.c \
 	mpi_error_class.c \
 	mpi_error_string.c \
+	mpi_exscan.c \
 	mpi_finalize.c \
 	mpi_gather.c \
 	mpi_gatherv.c \
@@ -127,7 +129,11 @@ PRIVATEAPISOURCES = \
 	mpi_type_commit.c \
 	mpi_type_contiguous.c \
 	mpi_type_count.c \
+	mpi_type_create_resized.c \
+	mpi_type_create_struct.c \
 	mpi_type_free.c \
+	mpi_type_get_extent.c \
+	mpi_type_get_true_extent.c \
 	mpi_type_indexed.c \
 	mpi_type_size.c \
 	mpi_type_struct.c \

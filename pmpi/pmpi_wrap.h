@@ -14,11 +14,29 @@ int _P(func)(void)							\
   return result;							\
 }
 
+#define PMPI_WRAP0_R(ret, func)					\
+ret _P(func)(void)							\
+{									\
+  double tstart = MPI_Wtime();						\
+  ret result = func();							\
+  totalTime += MPI_Wtime() - tstart;					\
+  return ret;								\
+}
+
 #define PMPI_WRAP1(func, type1)						\
 int _P(func)(type1 arg1)						\
 {									\
   double tstart = MPI_Wtime();						\
   int result = func(arg1);						\
+  totalTime += MPI_Wtime() - tstart;					\
+  return result;							\
+}
+
+#define PMPI_WRAP1_R(ret, func, type1)					\
+ret _P(func)(type1 arg1)						\
+{									\
+  double tstart = MPI_Wtime();						\
+  ret result = func(arg1);						\
   totalTime += MPI_Wtime() - tstart;					\
   return result;							\
 }

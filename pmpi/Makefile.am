@@ -27,6 +27,7 @@ libnullpmpi_la_SOURCES = \
 	comm_compare.c \
 	comm_create.c \
 	comm_dup.c \
+	comm_f2c.c \
 	comm_free.c \
 	comm_group.c \
 	comm_rank.c \
@@ -38,6 +39,7 @@ libnullpmpi_la_SOURCES = \
 	dims_create.c \
 	error_class.c \
 	error_string.c \
+	exscan.c \
 	finalize.c \
 	gather.c \
 	gatherv.c \
@@ -106,9 +108,14 @@ libnullpmpi_la_SOURCES = \
 	type_commit.c \
 	type_contiguous.c \
 	type_count.c \
+	type_create_resized.c \
+	type_create_struct.c \
 	type_free.c \
+	type_get_extent.c \
+	type_get_true_extent.c \
 	type_indexed.c \
 	type_size.c \
+	type_struct.c \
 	type_vector.c \
 	unpack.c \
 	wait.c \
