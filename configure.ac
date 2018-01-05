@@ -27,9 +27,9 @@ AC_HEADER_TIME
 AC_CHECK_HEADERS([assert.h sys/resource.h unistd.h])
 
 # Checks for types.
-AC_CHECK_TYPES([long long int])
 AC_CHECK_SIZEOF(long double)
 AC_CHECK_SIZEOF(long long)
+AC_CHECK_SIZEOF(long double _Complex)
 
 # Checks for structures.
 

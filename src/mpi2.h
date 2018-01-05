@@ -22,6 +22,7 @@ typedef /*@abstract@*/ /*@mutable@*/ *MPI_Info;
 /* FIXME: check the next two */
 typedef /*@abstract@*/ /*@mutable@*/ *MPI_Win;
 typedef /*@abstract@*/ /*@immutable@*/ /*@integraltype@*/ MPI_Offset;
+typedef /*@abstract@*/ /*@immutable@*/ /*@integraltype@*/ MPI_Count;
 typedef /*@abstract@*/ /*@immutable@*/ /*@integraltype@*/ MPI_Fint;
 
 #else /* ! __LCLINT__ */
@@ -31,6 +32,7 @@ typedef int *MPI_File;
 typedef int *MPI_Info;
 typedef int *MPI_Win;
 typedef int MPI_Offset;
+typedef int MPI_Count;
 typedef int MPI_Fint;
 #endif /* ! __LCLINT__ */
 
