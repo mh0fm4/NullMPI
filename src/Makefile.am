@@ -145,5 +145,14 @@ PRIVATEAPISOURCES = \
 	mpi_waitsome.c \
 	wtime.c
 
+PRIVATEAPISOURCES += \
+  file/mpi_file_open.c \
+  file/mpi_file_close.c \
+  file/mpi_file_seek.c \
+  file/mpi_file_get_position.c \
+  file/mpi_file_read_all.c \
+  file/mpi_file_write_all.c \
+  file/mpi_file_delete.c
+
 #nullmpi_conf.h: config.h
 #	cd $(top_builddir) && ./config.status src/config.h src/nullmpi_conf.h

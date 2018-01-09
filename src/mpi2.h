@@ -28,7 +28,8 @@ typedef /*@abstract@*/ /*@immutable@*/ /*@integraltype@*/ MPI_Fint;
 #else /* ! __LCLINT__ */
 
 /* handles to structures */
-typedef int *MPI_File;
+struct _MPI_File;
+typedef struct _MPI_File *MPI_File;
 typedef int *MPI_Info;
 typedef int *MPI_Win;
 typedef int MPI_Offset;
@@ -101,6 +102,41 @@ typedef void (MPI_Win_errhandler_fn)(MPI_Win *, int *, ...);
 /*@constant int MPI_ERR_UNSUPPORTED_OPERATION;@*/
 /*@constant int MPI_ERR_WIN;@*/
 
+#define MPI_ERR_ACCESS                 101
+#define MPI_ERR_AMODE                  102
+#define MPI_ERR_ASSERT                 103
+#define MPI_ERR_BAD_FILE               104
+#define MPI_ERR_BASE                   105
+#define MPI_ERR_CONVERSION             106
+#define MPI_ERR_DISP                   107
+#define MPI_ERR_DUP_DATAREP            108
+#define MPI_ERR_FILE_EXISTS            109
+#define MPI_ERR_FILE_IN_USE            110
+#define MPI_ERR_FILE                   111
+#define MPI_ERR_INFO_KEY               112
+#define MPI_ERR_INFO_NOKEY             113
+#define MPI_ERR_INFO_VALUE             114
+#define MPI_ERR_INFO                   115
+#define MPI_ERR_IO                     116
+#define MPI_ERR_KEYVAL                 117
+#define MPI_ERR_LOCKTYPE               118
+#define MPI_ERR_NAME                   119
+#define MPI_ERR_NO_MEM                 120
+#define MPI_ERR_NOT_SAME               121
+#define MPI_ERR_NO_SPACE               122
+#define MPI_ERR_NO_SUCH_FILE           123
+#define MPI_ERR_PORT                   124
+#define MPI_ERR_QOUTA                  125
+#define MPI_ERR_READ_ONLY              126
+#define MPI_ERR_RMA_CONFLICT           127
+#define MPI_ERR_RMA_SYNC               128
+#define MPI_ERR_SERVICE                129
+#define MPI_ERR_SIZE                   130
+#define MPI_ERR_SPAWN                  131
+#define MPI_ERR_UNSUPPORTED_DATAREP    132
+#define MPI_ERR_UNSUPPORTED_OPERATION  133
+#define MPI_ERR_WIN                    134
+
 /* assorted constants */
 /*@constant void *MPI_IN_PLACE;@*/
 #define MPI_IN_PLACE  (void *)-1
@@ -158,20 +194,20 @@ typedef void (MPI_Win_errhandler_fn)(MPI_Win *, int *, ...);
 /*@constant int MPI_MODE_UNIQUE_OPEN;@*/
 /*@constant int MPI_MODE_WRONLY;@*/
 
-#define MPI_MODE_APPEND           0
-#define MPI_MODE_CREATE           1
-#define MPI_MODE_DELETE_ON_CLOSE  2
-#define MPI_MODE_EXCL             3
-#define MPI_MODE_NOCHECK          4
-#define MPI_MODE_NOPRECEDE        5
-#define MPI_MODE_NOPUT            6
-#define MPI_MODE_NOSTORE          7
-#define MPI_MODE_NOSUCCEED        8
-#define MPI_MODE_RDONLY           9
-#define MPI_MODE_RDWR             10
-#define MPI_MODE_SEQUENTIAL       11
-#define MPI_MODE_UNIQUE_OPEN      12
-#define MPI_MODE_WRONLY           13
+#define MPI_MODE_APPEND           0x0001
+#define MPI_MODE_CREATE           0x0002
+#define MPI_MODE_DELETE_ON_CLOSE  0x0004
+#define MPI_MODE_EXCL             0x0008
+#define MPI_MODE_NOCHECK          0x0010
+#define MPI_MODE_NOPRECEDE        0x0020
+#define MPI_MODE_NOPUT            0x0040
+#define MPI_MODE_NOSTORE          0x0080
+#define MPI_MODE_NOSUCCEED        0x0100
+#define MPI_MODE_RDONLY           0x0200
+#define MPI_MODE_RDWR             0x0400
+#define MPI_MODE_SEQUENTIAL       0x0800
+#define MPI_MODE_UNIQUE_OPEN      0x1000
+#define MPI_MODE_WRONLY           0x2000
 
 /* datatype decoding constants */
 /*@constant int MPI_COMBINER_CONTIGUOUS;@*/

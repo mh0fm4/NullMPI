@@ -8,7 +8,7 @@ AC_CONFIG_SRCDIR([src/nullmpi.c])
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_HEADERS([src/config.h])
 AX_PREFIX_CONFIG_H([src/nullmpi_conf.h], [_NULLMPI])
-AM_INIT_AUTOMAKE([1.7 foreign -Wall])
+AM_INIT_AUTOMAKE([1.7 foreign -Wall subdir-objects])
 AC_CONFIG_MACRO_DIR([m4])
 
 # Checks for programs.
