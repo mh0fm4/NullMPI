@@ -154,5 +154,17 @@ PRIVATEAPISOURCES += \
   file/mpi_file_write_all.c \
   file/mpi_file_delete.c
 
+PRIVATEAPISOURCES += \
+  win/mpi_win_create.c \
+  win/mpi_win_free.c \
+  win/mpi_win_fence.c \
+  win/mpi_put.c \
+  win/mpi_get.c \
+  win/mpi_accumulate.c
+
+PRIVATEAPISOURCES += \
+  mem/mpi_alloc_mem.c \
+  mem/mpi_free_mem.c
+
 #nullmpi_conf.h: config.h
 #	cd $(top_builddir) && ./config.status src/config.h src/nullmpi_conf.h
