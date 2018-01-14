@@ -26,6 +26,12 @@
 extern "C" {
 #endif
 
+#if _NULLMPI_USE_DEPRECATED_MPI_WARNINGS
+#define _NULLMPI_ATTRIBUTE_DEPRECATED  __nullmpi_attribute__((__deprecated__))
+#else
+#define _NULLMPI_ATTRIBUTE_DEPRECATED
+#endif
+
 #include <mpi_types.h>
 
 /* TODO: some splint annotations (mostly @null@) have been commented out
@@ -227,22 +233,22 @@ extern int MPI_Type_indexed(int count, int blocklens[], int indices[],
 #if _NULLMPI_USE_DEPRECATED_MPI1_FEATURES
 extern int MPI_Type_hindexed(int, int *, MPI_Aint *, MPI_Datatype,
     /*@out@*/ MPI_Datatype *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Type_hvector(int, int, MPI_Aint, MPI_Datatype,
     /*@out@*/ MPI_Datatype *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Type_struct(int, int *, MPI_Aint *, MPI_Datatype *,
     /*@out@*/ MPI_Datatype *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Address(void *, /*@out@*/ MPI_Aint *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 
 extern int MPI_Type_extent(MPI_Datatype, /*@out@*/ MPI_Aint *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Type_lb(MPI_Datatype, /*@out@*/ MPI_Aint*)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Type_ub(MPI_Datatype, /*@out@*/ MPI_Aint*)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 #endif /* _NULLMPI_USE_DEPRECATED_MPI1_FEATURES */
 
 /* see mpi-20.ps. It clarifies the declaration below as correct
@@ -555,29 +561,29 @@ extern int MPI_Get_processor_name(/*@out@*/ char *name, /*@out@*/ int *resultlen
 
 extern int MPI_Keyval_create(MPI_Copy_function *, MPI_Delete_function *,
     /*@out@*/ int *, void *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Keyval_free(int *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 
 extern int MPI_Attr_put(MPI_Comm, int, void *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Attr_get(MPI_Comm, int, /*@out@*/ void *, /*@out@*/ int *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Attr_delete(MPI_Comm, int)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 
 
 /* MPI-1.2 */
 
 extern int MPI_Errhandler_create(MPI_Handler_function *,
     /*@out@*/ /*@only@*/ MPI_Errhandler *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Errhandler_set(MPI_Comm, MPI_Errhandler)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Errhandler_get(MPI_Comm, /*@out@*/ MPI_Errhandler *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 extern int MPI_Errhandler_free(/*@only@*/ MPI_Errhandler *)
-    __nullmpi_attribute__((__deprecated__));
+    _NULLMPI_ATTRIBUTE_DEPRECATED;
 
 #endif /* _NULLMPI_USE_DEPRECATED_MPI1_FEATURES */
 

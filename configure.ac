@@ -56,6 +56,7 @@ AC_CHECK_FUNCS([memcpy gettimeofday getrusage])
 # nullmpi features
 AC_DEFINE([USE_MPI2_FEATURES], 1, [define if you want to make use of MPI2 features])
 AC_DEFINE([USE_DEPRECATED_MPI1_FEATURES], 1, [define if you want to make use of deprecated MPI1 features])
+AC_DEFINE([USE_DEPRECATED_MPI_WARNINGS], 0, [define if you want to see warnings about the use of deprecated MPI features])
 
 AH_TOP([/*@-namechecks@*/])
 AH_BOTTOM([#if defined(_NULLMPI_HAVE_ATTRIBUTE) || defined(HAVE_ATTRIBUTE)
